@@ -218,6 +218,7 @@ THREE.OrbitControls = function ( object, domElement ) {
 		if ( scope.object.top !== undefined ) {
 			this.object.zoom *= dollyScale;
 			this.object.updateProjectionMatrix();
+			this.dispatchEvent( changeEvent );
 		} else {
 			scale /= dollyScale;
 		}
@@ -230,6 +231,7 @@ THREE.OrbitControls = function ( object, domElement ) {
 		if ( scope.object.top !== undefined ) {
 			this.object.zoom /= dollyScale;
 			this.object.updateProjectionMatrix();
+			this.dispatchEvent( changeEvent );
 		} else {
 			scale *= dollyScale;
 		}
